@@ -22,32 +22,32 @@ stages:
   displayName: 'Build the back-end app'
   jobs:
 
-  - job: Clean_Sources
-    displayName: Clean Sources
-    steps:
-    - task: Maven@3
-      inputs:
-        mavenPomFile: 'pom.xml'
-        mavenOptions: '-Xmx3072m'
-        javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '11'
-        jdkArchitectureOption: 'x64'
-        publishJUnitResults: false
-        goals: 'clean'
-
-  - job: Compile
-    displayName: Compile
-    dependsOn: Clean_Sources
-    steps:
-    - task: Maven@3
-      inputs:
-        mavenPomFile: 'pom.xml'
-        mavenOptions: '-Xmx3072m'
-        javaHomeOption: 'JDKVersion'
-        jdkVersionOption: '11'
-        jdkArchitectureOption: 'x64'
-        publishJUnitResults: false
-        goals: 'compile -DskipTests=true'
+#   - job: Clean_Sources
+#     displayName: Clean Sources
+#     steps:
+#     - task: Maven@3
+#       inputs:
+#         mavenPomFile: 'pom.xml'
+#         mavenOptions: '-Xmx3072m'
+#         javaHomeOption: 'JDKVersion'
+#         jdkVersionOption: '11'
+#         jdkArchitectureOption: 'x64'
+#         publishJUnitResults: false
+#         goals: 'clean'
+# 
+#   - job: Compile
+#     displayName: Compile
+#     dependsOn: Clean_Sources
+#     steps:
+#     - task: Maven@3
+#       inputs:
+#         mavenPomFile: 'pom.xml'
+#         mavenOptions: '-Xmx3072m'
+#         javaHomeOption: 'JDKVersion'
+#         jdkVersionOption: '11'
+#         jdkArchitectureOption: 'x64'
+#         publishJUnitResults: false
+#         goals: 'compile -DskipTests=true'
 
   - job: Test_Sources
     displayName: Test Sources

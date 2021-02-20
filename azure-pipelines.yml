@@ -51,7 +51,7 @@ stages:
 
   - job: Test_Sources
     displayName: Test Sources
-    dependsOn: Compile
+#    dependsOn: Compile
     steps:
     - task: Maven@3
       inputs:
